@@ -13,15 +13,18 @@ jobs:
   first-workflow-job:
     name: first-job
     runs-on: ubuntu-latest
+    container:
+      image: node:14.16
     steps:
+      #  - name: before checkout
+      #    run: ls
+      #    shell: bash
 
-       - name: before checkout
-         run: ls
-         shell: bash
+      #  - name: checkout action
+      #    uses: actions/checkout@v4
 
-       - name: checkout action
-         uses: actions/checkout@v4
-
-       - name: after checkout
-         run: ls
-         shell: bash
+      #  - name: after checkout
+      #    run: ls
+      #    shell: bash
+      - name: print node version
+        run: node -v
