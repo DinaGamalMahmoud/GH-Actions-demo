@@ -13,4 +13,5 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: testing workflow-dispatch
+          if: github.event.inputs.VersionName == 'build'
           run: echo "workflow dispatch"
